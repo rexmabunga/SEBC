@@ -58,4 +58,19 @@ tune2fs 1.42.9 (28-Dec-2013)
 /sbin/tune2fs: Bad magic number in super-block while trying to open /dev/xvda2
 Couldn't find valid filesystem superblock.
 
+DISABLE TRANSPARENT HUGEPAGE
+
+[ec2-user@ip-172-31-17-228 ~]$ egrep 'trans|thp' /proc/vmstat
+
+nr_anon_transparent_hugepages 3
+thp_fault_alloc 26
+thp_fault_fallback 0
+thp_collapse_alloc 1
+thp_collapse_alloc_failed 0
+thp_split 0
+thp_zero_page_alloc 0
+thp_zero_page_alloc_failed 0
+
+
+
 
