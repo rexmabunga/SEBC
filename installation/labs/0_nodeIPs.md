@@ -1,4 +1,4 @@
-Private IPs
+```Private IPs
 Master and Edge Node: 172.31.17.228
 Node 1: 172.31.26.150
 Node 2: 172.31.29.74
