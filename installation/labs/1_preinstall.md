@@ -71,6 +71,24 @@ thp_split 0
 thp_zero_page_alloc 0
 thp_zero_page_alloc_failed 0
 
+sudo vi /etc/sysconfig/grub
+GRUB_CMDLINE_LINUX="tranparent_hugepage=never"
+
+[ec2-user@ip-172-31-17-228 ~]$ sudo grub2-mkconfig -o /boot/grub2/grub.cfg
+
+Generating grub configuration file ...
+Found linux image: /boot/vmlinuz-3.10.0-327.10.1.el7.x86_64
+Found initrd image: /boot/initramfs-3.10.0-327.10.1.el7.x86_64.img
+Found linux image: /boot/vmlinuz-0-rescue-e8f19fd1b8f1495db0b922f17f8112eb
+Found initrd image: /boot/initramfs-0-rescue-e8f19fd1b8f1495db0b922f17f8112eb.img
+done
+
+[ec2-user@ip-172-31-17-228 ~]$ sudo reboot
+
+[ec2-user@ip-172-31-17-228 ~]$ cat /proc/cmdline
+BOOT_IMAGE=/boot/vmlinuz-3.10.0-327.10.1.el7.x86_64 root=UUID=65722bd1-fccc-453e-a96a-8f3599aa0466 ro tranparent_hugepage=never
+
+
 
 
 
