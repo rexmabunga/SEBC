@@ -72,7 +72,7 @@ thp_zero_page_alloc 0
 thp_zero_page_alloc_failed 0
 
 sudo vi /etc/sysconfig/grub
-GRUB_CMDLINE_LINUX="tranparent_hugepage=never"
+GRUB_CMDLINE_LINUX="transparent_hugepage=never"
 
 [ec2-user@ip-172-31-17-228 ~]$ sudo grub2-mkconfig -o /boot/grub2/grub.cfg
 
@@ -89,6 +89,41 @@ done
 [ec2-user@ip-172-31-17-228 ~]$ cat /proc/cmdline
 
 BOOT_IMAGE=/boot/vmlinuz-3.10.0-327.10.1.el7.x86_64 root=UUID=65722bd1-fccc-453e-a96a-8f3599aa0466 ro tranparent_hugepage=never
+
+[ec2-user@ip-172-31-17-228 ~]$ egrep 'trans|thp' /proc/vmstat
+
+nr_anon_transparent_hugepages 0
+thp_fault_alloc 0
+thp_fault_fallback 0
+thp_collapse_alloc 0
+thp_collapse_alloc_failed 0
+thp_split 0
+thp_zero_page_alloc 0
+thp_zero_page_alloc_failed 0
+
+[ec2-user@ip-172-31-17-228 ~]$ ifconfig
+
+eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 9001
+        inet 172.31.17.228  netmask 255.255.240.0  broadcast 172.31.31.255
+        inet6 fe80::8c:d1ff:fed0:1889  prefixlen 64  scopeid 0x20<link>
+        ether 02:8c:d1:d0:18:89  txqueuelen 1000  (Ethernet)
+        RX packets 422  bytes 41830 (40.8 KiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 415  bytes 52060 (50.8 KiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 0  (Local Loopback)
+        RX packets 4  bytes 340 (340.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 4  bytes 340 (340.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+        
+        
+
+
 
 
 
