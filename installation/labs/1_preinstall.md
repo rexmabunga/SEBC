@@ -122,9 +122,48 @@ lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
         TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
        
 [ec2-user@ip-172-31-17-228 ~]$ getent networks
+
 default               0.0.0.0
 loopback              127.0.0.0
 link-local            169.254.0.0
+
+[ec2-user@ip-172-31-17-228 ~]$ getent hosts cloudera.com yahoo.com cnn.com
+
+52.52.119.122   cloudera.com
+52.52.13.233    cloudera.com
+2001:4998:44:204::a7 yahoo.com
+2001:4998:58:c02::a9 yahoo.com
+2001:4998:c:a06::2:4008 yahoo.com
+151.101.64.73   cnn.com
+151.101.128.73  cnn.com
+151.101.192.73  cnn.com
+151.101.0.73    cnn.com
+
+INSTALLING AND STARTING NSCD and NTPD
+
+[ec2-user@ip-172-31-17-228 ~]$ sudo yum install nscd
+
+Installed:
+  nscd.x86_64 0:2.17-157.el7_3.1
+
+Dependency Updated:
+  glibc.x86_64 0:2.17-157.el7_3.1     glibc-common.x86_64 0:2.17-157.el7_3.1
+
+Complete!
+
+[ec2-user@ip-172-31-17-228 ~]$ sudo yum install ntp
+
+[ec2-user@ip-172-31-17-228 ~]$ sudo systemctl start nscd
+
+[ec2-user@ip-172-31-17-228 ~]$ sudo systemctl start ntpd
+
+
+
+
+
+
+
+
 
         
         
