@@ -120,6 +120,12 @@ lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
         RX errors 0  dropped 0  overruns 0  frame 0
         TX packets 4  bytes 340 (340.0 B)
         TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+       
+[ec2-user@ip-172-31-17-228 ~]$ getent networks
+default               0.0.0.0
+loopback              127.0.0.0
+link-local            169.254.0.0
+
         
         
 
