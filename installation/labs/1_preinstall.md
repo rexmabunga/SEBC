@@ -3,13 +3,21 @@
 vm.swappiness = 1
 
 df -k
+
 Filesystem     1K-blocks   Used Available Use% Mounted on
+
 /dev/xvda2      10473452 964104   9509348  10% /
+
 devtmpfs         7599332      0   7599332   0% /dev
+
 tmpfs            7486540      0   7486540   0% /dev/shm
+
 tmpfs            7486540  16664   7469876   1% /run
+
 tmpfs            7486540      0   7486540   0% /sys/fs/cgroup
+
 tmpfs            1497312      0   1497312   0% /run/user/1000
+
 tmpfs            1497312      0   1497312   0% /run/user/0
 [ec2-user@ip-172-31-17-228 ~]$ mount
 sysfs on /sys type sysfs (rw,nosuid,nodev,noexec,relatime,seclabel)
