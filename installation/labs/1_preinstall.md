@@ -51,3 +51,11 @@ mqueue on /dev/mqueue type mqueue (rw,relatime,seclabel)
 tmpfs on /run/user/1000 type tmpfs (rw,nosuid,nodev,relatime,seclabel,size=1497312k,mode=700,uid=1000,gid=1000)
 tmpfs on /run/user/0 type tmpfs (rw,nosuid,nodev,relatime,seclabel,size=1497312k,mode=700)
 
+
+[ec2-user@ip-172-31-17-228 ~]$ sudo /sbin/tune2fs -l /dev/xvda2
+
+tune2fs 1.42.9 (28-Dec-2013)
+/sbin/tune2fs: Bad magic number in super-block while trying to open /dev/xvda2
+Couldn't find valid filesystem superblock.
+
+
