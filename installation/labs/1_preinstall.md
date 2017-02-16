@@ -85,7 +85,9 @@ done
 
 [ec2-user@ip-172-31-17-228 ~]$ sudo reboot
 
+
 [ec2-user@ip-172-31-17-228 ~]$ cat /proc/cmdline
+
 BOOT_IMAGE=/boot/vmlinuz-3.10.0-327.10.1.el7.x86_64 root=UUID=65722bd1-fccc-453e-a96a-8f3599aa0466 ro tranparent_hugepage=never
 
 
