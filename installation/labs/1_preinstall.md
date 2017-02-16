@@ -19,7 +19,9 @@ tmpfs            7486540      0   7486540   0% /sys/fs/cgroup
 tmpfs            1497312      0   1497312   0% /run/user/1000
 
 tmpfs            1497312      0   1497312   0% /run/user/0
+
 [ec2-user@ip-172-31-17-228 ~]$ mount
+
 sysfs on /sys type sysfs (rw,nosuid,nodev,noexec,relatime,seclabel)
 proc on /proc type proc (rw,nosuid,nodev,noexec,relatime)
 devtmpfs on /dev type devtmpfs (rw,nosuid,seclabel,size=7599332k,nr_inodes=1899833,mode=755)
