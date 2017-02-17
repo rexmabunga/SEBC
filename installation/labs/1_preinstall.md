@@ -206,9 +206,56 @@ Complete!
 
 [ec2-user@ip-172-31-17-228 ~]$ tar zxvf mysql-connector-java-5.1.40.tar.gz
 
+[ec2-user@ip-172-31-17-228 ~]$ sudo mkdir /usr/share/java
+
 [ec2-user@ip-172-31-17-228 ~]$ sudo cp  mysql-connector-java-5.1.40/mysql-connector-java-5.1.40-bin.jar /usr/share/java/
 
-[ec2-user@ip-172-31-17-228 ~]$ sudo mkdir /usr/share/java
+[ec2-user@ip-172-31-17-228 ~]$ sudo systemctl start mysqld 
+
+[ec2-user@ip-172-31-17-228 ~]$ sudo vi /etc/my.cnf
+
+ADD skip-grant-tables after [mysql]
+
+[ec2-user@ip-172-31-17-228 ~]$ sudo systemctl restart mysqld
+
+[ec2-user@ip-172-31-17-228 ~]$ sudo /usr/bin/mysql_secure_installation
+
+Re-enter new password:
+
+Estimated strength of the password: 0
+
+
+
+Remove anonymous users? (Press y|Y for Yes, any other key for No) : y
+
+Disallow root login remotely? (Press y|Y for Yes, any other key for No) : N
+
+Remove test database and access to it? (Press y|Y for Yes, any other key for No) : Y
+
+Reload privilege tables now? (Press y|Y for Yes, any other key for No) : Y
+
+All done!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
