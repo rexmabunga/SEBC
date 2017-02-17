@@ -161,11 +161,11 @@ Complete!
 
 REBOOT TO TEST IF NSCD AND NTP START
 
+INSTALLING MySQL (all nodes)
 
+[ec2-user@ip-172-31-17-228 ~]$ sudo yum install wget
 
-
-
-
+[ec2-user@ip-172-31-17-228 ~]$ wget https://dev.mysql.com/get/mysql57-community-release-el7-9.noarch.rpm
 
 
 
