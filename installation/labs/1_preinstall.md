@@ -157,6 +157,12 @@ Complete!
 
 [ec2-user@ip-172-31-17-228 ~]$ sudo systemctl start ntpd
 
+[ec2-user@ip-172-31-17-228 ~]$ sudo systemctl disable chronyd.service
+
+REBOOT TO TEST IF NSCD AND NTP START
+
+
+
 
 
 
