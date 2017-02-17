@@ -167,12 +167,49 @@ INSTALLING MySQL (all nodes)
 
 [ec2-user@ip-172-31-17-228 ~]$ wget https://dev.mysql.com/get/mysql57-community-release-el7-9.noarch.rpm
 
+[ec2-user@ip-172-31-17-228 ~]$ sudo rpm -ivh mysql-community-release-el7-5.noarch.rpm
 
+warning: mysql57-community-release-el7-9.noarch.rpm: Header V3 DSA/SHA1 Signature, key ID 5072e1f5: NOKEY
 
+Preparing...                          ################################# [100%]
 
+Updating / installing...
 
+1:mysql57-community-release-el7-9  ################################# [100%]
+
+[ec2-user@ip-172-31-17-228 ~]$ sudo yum update
+
+Installed:
+  kernel.x86_64 0:3.10.0-514.6.1.el7
+  mysql-community-libs.x86_64 0:5.7.17-1.el7
+  mysql-community-libs-compat.x86_64 0:5.7.17-1.el7
         
-        
+Replaced:
+  mariadb-libs.x86_64 1:5.5.44-2.el7
+
+Complete!
+
+INSTALL MYSQL SERVER ON MASTER NODE AND REPLICA NODE (NODE 4)
+
+[ec2-user@ip-172-31-17-228 ~]$ sudo yum install mysql-server
+
+Installed:
+  mysql-community-server.x86_64 0:5.7.17-1.el7
+
+Complete!
+
+[ec2-user@ip-172-31-17-228 ~]$ sudo systemctl start mysqld
+
+[ec2-user@ip-172-31-17-228 ~]$ sudo systemctl enable mysqld.service
+
+[ec2-user@ip-172-31-17-228 ~]$ wget https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-5.1.40.tar.gz
+
+[ec2-user@ip-172-31-17-228 ~]$ tar zxvf mysql-connector-java-5.1.40.tar.gz
+
+[ec2-user@ip-172-31-17-228 ~]$ sudo cp  mysql-connector-java-5.1.40/mysql-connector-java-5.1.40-bin.jar /usr/share/java/
+
+[ec2-user@ip-172-31-17-228 ~]$ sudo mkdir /usr/share/java
+
 
 
 
